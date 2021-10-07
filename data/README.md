@@ -1,4 +1,8 @@
 # Data
+Contains any data used within the Formula One Insights project.
 
-- `data/raw` - raw data should go in this directory; you should add the original source file here. Always keep the original data file without editing.
-- `data/processed` - You can add cleaned up, and processed data files in this directory.
+## Raw 
+Includes all original data.
+
+## Processed 
+Includes the processed data and intermediary results.

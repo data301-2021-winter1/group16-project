@@ -1,3 +1,3 @@
 # Processed Data Folder
+Holds all the processed data and itermediary results of the Formula 1 Insights Project.
 
-- `processed` - You can place cleaned up, and processed data files in this directory.
