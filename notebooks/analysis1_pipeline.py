@@ -21,8 +21,7 @@ def pipeline(raw_path,processed_path):
         races = pd.read_csv(raw_path+"races.csv", na_values=['\\N'])
         results_races = pd.merge(results,races,on="raceId",how="left")
         results_races = results_races.drop(["url","time_y"],axis=1)
-        results_races.to_csv(processed_path+"results.csv")
+        results_races.to_csv(processed_path+"results_races.csv")
     except: 
         print("Could not locate the results.csv and races.csv")
-
 # %%
