@@ -13,11 +13,13 @@ def count_overtakes(raceId, df):
     records['overtakes'] = records['overtakes'].apply(lambda x: -x if x<0 else 0)
     return records['overtakes'].sum()
 
+
 def count_prev_races(data, df):
     '''Count the number races that have been taken place on the race before this one'''
     year = int(data.split(',')[0])
     circuitId = int(data.split(',')[1])
     return len(df[(df['year']<year)&(df['circuitId']==circuitId)])
+
 
 def lap_record_to_date(data, df):
     '''find the lap record at the moment the race took place'''
@@ -26,10 +28,12 @@ def lap_record_to_date(data, df):
     df = df[(df['year']<year)&(df['circuitId']==circuitId)]
     return df['fastestLapTime'].min()
 
+
 def load_and_process(path_to_files, save=False):
     '''Load and Process all the data needed for my analysis, taking the path to the data and returning the races dataframe
        Set save to True to save the dataframe into processed data folder'''
 
+    # filenames
     circuits_filename = 'circuits.csv'
     constructor_res_filename = 'constructor_results.csv'
     constructor_stand_filename = 'constructor_standings.csv'
@@ -42,7 +46,7 @@ def load_and_process(path_to_files, save=False):
     results_filename = 'results.csv'
     lap_times_filename = 'lap_times.csv'
 
-
+    # Data needed to match Circuit Name with Circuit ID
     circuits = (
         pd.read_csv(path_to_files + circuits_filename)
         .replace('\\N',np.nan)
@@ -50,6 +54,7 @@ def load_and_process(path_to_files, save=False):
         .drop(columns=['circuitRef', 'country', 'lat', 'lng', 'alt', 'url'])
     )
 
+    # Data needed to match Team Name with Team ID
     constructors = (
         pd.read_csv(path_to_files + constructors_filename)
         .replace('\\N',np.nan)
@@ -57,6 +62,7 @@ def load_and_process(path_to_files, save=False):
         .rename(columns={'name': 'Team Name'})
     )
 
+    # Data needed to state which constructor won the grand prix
     constructor_res = (
         pd.read_csv(path_to_files + constructor_res_filename)
         .replace('\\N',np.nan)
@@ -70,6 +76,7 @@ def load_and_process(path_to_files, save=False):
         .rename(columns={'Team Name':'Constructors Winner'})
     )
 
+    # Data needed to state which team is leading in the championship
     constructor_stand = (
         pd.read_csv(path_to_files + constructor_stand_filename)
         .replace('\\N',np.nan)
@@ -77,21 +84,25 @@ def load_and_process(path_to_files, save=False):
         .drop(columns=['constructorStandingsId', 'positionText', 'wins', 'constructorId'])
     )
 
+    # subset of constructor_stand needed to give the championship leader at each race
     const_stand_leader = (
         constructor_stand[constructor_stand['position']==1]
         .rename(columns={'points':'points1'})
         .drop(columns=['position', 'Team Name'])
     )
-
+    
+    # subset of constructor_stand needed to give the 2nd place in the championship at each race 
     const_stand_second = (
         constructor_stand[constructor_stand['position']==2]
         .rename(columns={'points':'points2'})
         .drop(columns=['position', 'Team Name'])
     )
 
+    # Calculated difference between leader and second place in constructor championship to see whether title race is still open
     const_stand_difference = const_stand_leader.merge(const_stand_second, how='left', on='raceId')
     const_stand_difference['Constructors Championship Point Difference'] = const_stand_difference['points1']-const_stand_difference['points2']
 
+    # Data to Match the driver id with the drivers name
     drivers = (
         pd.read_csv(path_to_files + drivers_filename)
         .replace('\\N',np.nan)
@@ -100,6 +111,7 @@ def load_and_process(path_to_files, save=False):
         .rename(columns={'Driver_Name': 'Driver Name'})
     )
 
+    # Data needed to state which driver is leading in the driver championship
     driver_stand = (
         pd.read_csv(path_to_files + driver_stand_filename)
         .replace('\\N',np.nan)
@@ -107,21 +119,25 @@ def load_and_process(path_to_files, save=False):
         .drop(columns=['driverId', 'driverStandingsId', 'positionText', 'wins'])
     )
 
+    # subset of driver_stand needed to give the 1st place in the championship at each race 
     driver_stand_leader = (
         driver_stand[driver_stand['position']==1]
         .rename(columns={'points':'points1'})
         .drop(columns=['position', 'Driver Name'])
     )
 
+    # subset of driver_stand needed to give the 2nd place in the championship at each race 
     driver_stand_second = (
         driver_stand[driver_stand['position']==2]
         .rename(columns={'points':'points2'})
         .drop(columns=['position', 'Driver Name'])
     )
-
+    
+    # Calculated difference between leader and second place in driver championship to see whether title race is still open
     driver_stand_difference = driver_stand_leader.merge(driver_stand_second, how='left', on='raceId')
     driver_stand_difference['Driver Championship Point Difference'] = driver_stand_difference['points1']-driver_stand_difference['points2']
 
+    # Information on who one the qualifying (not sure yet if I will include it)
     qualifying = (
         pd.read_csv(path_to_files + qualifying_filename)
         .replace('\\N',np.nan)
@@ -131,6 +147,7 @@ def load_and_process(path_to_files, save=False):
         .drop(columns=['driverId', 'qualifyId', 'constructorId', 'number', 'q1', 'q2', 'q3', 'position'])
     )
 
+    # transform format of pitstop duratino and prepare for merging, needed to state average duration of pitstop for each race
     pit_stops = (
         pd.read_csv(path_to_files + pit_stops_filename)
         .assign(duration_s = lambda y: y.duration.apply(lambda x: float(x.split(':')[1]) if ':' in x else float(x)))
@@ -142,16 +159,19 @@ def load_and_process(path_to_files, save=False):
         .reset_index()
     )
 
+    # File needed to extract the number of overtakes that took place each round
     lap_times = (
         pd.read_csv(path_to_files + lap_times_filename)
         .replace('\\N',np.nan)
     )
 
+    # initial reading of races because it contains the year which helps for further matching
     races = (
         pd.read_csv(path_to_files + races_filename)
         .replace('\\N',np.nan)
     )
 
+    # Contains information regarding fastest lap time and lap speed, needed for track records and highspeeds as well as time differences
     results = (
         pd.read_csv(path_to_files + results_filename)
         .replace('\\N',np.nan)
@@ -164,17 +184,20 @@ def load_and_process(path_to_files, save=False):
         .merge(races[['raceId', 'year', 'circuitId']], on='raceId', how='left')
     )
 
+    # subset of results, with time difference between first and second to state whether there was a close battle for the win
     diff_1_2 = (
         results[results['positionOrder']==2][['raceId', 'time']]
         .rename(columns={'time':'Difference 1st to 2nd (in s)'})
     )
 
+    # subset of results, with time difference between first and fifth to give avg. difference between top driver, state whether there was close racing till last lap
     diff_1_5 = (
         results[results['positionOrder']==5][['raceId', 'time']]
         .assign(time = lambda x: x.time/4)
         .rename(columns={'time':'avg. Difference Top 5 (in s)'})
     )
 
+    # sub set of results to give top speed for each race
     highspeeds = (
         results[['raceId', 'fastestLapSpeed']]
         .groupby(['raceId'])
@@ -182,6 +205,7 @@ def load_and_process(path_to_files, save=False):
         .reset_index()
     )
 
+    # sub set of results to give fastest lap for each race
     fastest_lap = (
         results[['raceId', 'fastestLapTime']]
         .groupby(['raceId'])
@@ -189,6 +213,7 @@ def load_and_process(path_to_files, save=False):
         .reset_index()
     )
 
+    # Merging all the information from above into races, so we can analyze all info stated above in the next step
     races = (
         races
         .assign(date = lambda x: pd.to_datetime(x.date, infer_datetime_format=True))
@@ -226,12 +251,13 @@ def load_and_process(path_to_files, save=False):
         .assign(prev_round = lambda x: x['round'] - 1)
     )
 
-
+    # subset of races needed to state whether the leader in the championship changed at this race
     prevLeaders = (
         races[['year', 'round', 'Championship Leader (after Race)', 'Constructors Leader (after Race)']]
         .rename(columns={'Championship Leader (after Race)':'Championship Leader (before Race)', 'Constructors Leader (after Race)':'Constructors Leader (before Race)'})
     )
 
+    # merging the above subset back into races, using shift of round/counter of race in season
     races = (
         races[races['year']<2021]
         .assign(prev_races = lambda x: x['year'].astype(str) + ',' + x['circuitId'].astype(str))
@@ -243,6 +269,7 @@ def load_and_process(path_to_files, save=False):
         .drop_duplicates(subset=['year', 'raceId'])
     )
 
+    # if save set to true save the dataframe into the processed folder
     if save:
         races.to_csv('../data/processed/Niklas_Processed/races.csv')
 
