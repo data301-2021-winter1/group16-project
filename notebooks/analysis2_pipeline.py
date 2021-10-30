@@ -259,7 +259,7 @@ def load_and_process(path_to_files, save=False):
 
     # merging the above subset back into races, using shift of round/counter of race in season
     races = (
-        races[races['year']<2021]
+        races[(races['year']<2021) & (races['year']>1999)]
         .assign(prev_races = lambda x: x['year'].astype(str) + ',' + x['circuitId'].astype(str))
         .assign(prev_races = lambda y: y.prev_races.apply(lambda x: count_prev_races(x,races)))
         .rename(columns={'prev_races':'Number of prev. F1 Races'})
