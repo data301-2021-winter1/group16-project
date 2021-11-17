@@ -1,0 +1,1702 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20213.21.1018.0949                               -->
+<workbook source-build='2021.3.3 (20213.21.1018.0949)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Championship Importance Factor' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+        <calculation class='tableau' formula='4' />
+        <range granularity='1' max='10' min='0' />
+      </column>
+      <column caption='Top Speed Factor' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='7'>
+        <calculation class='tableau' formula='7' />
+        <range max='10' min='0' />
+      </column>
+    </datasource>
+    <datasource caption='races' inline='true' name='federated.0uc241a0rbpcp5158x83x09e97h7' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='races' name='textscan.0xk9skl0okehzk1c4o8wx1kb553m'>
+            <connection class='textscan' directory='/Users/niklastecklenburg/Desktop/DATA_301/group16-project/data/processed/Niklas_Processed' filename='races.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0xk9skl0okehzk1c4o8wx1kb553m' name='data_ananlysis.csv' table='[data_ananlysis#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='raceId' ordinal='1' />
+            <column datatype='integer' name='year' ordinal='2' />
+            <column datatype='integer' name='round' ordinal='3' />
+            <column datatype='integer' name='circuitId' ordinal='4' />
+            <column datatype='string' name='name' ordinal='5' />
+            <column datatype='date' name='date' ordinal='6' />
+            <column datatype='string' name='url' ordinal='7' />
+            <column datatype='string' name='Circuit Name' ordinal='8' />
+            <column datatype='string' name='City' ordinal='9' />
+            <column datatype='string' name='1st Driver Name' ordinal='10' />
+            <column datatype='string' name='1st Team Name' ordinal='11' />
+            <column datatype='string' name='2nd Driver Name' ordinal='12' />
+            <column datatype='string' name='2nd Team Name' ordinal='13' />
+            <column datatype='string' name='3rd Driver Name' ordinal='14' />
+            <column datatype='string' name='3rd Team Name' ordinal='15' />
+            <column datatype='string' name='Constructors Winner' ordinal='16' />
+            <column datatype='string' name='Pole Sitter' ordinal='17' />
+            <column datatype='string' name='Championship Leader (after Race)' ordinal='18' />
+            <column datatype='string' name='Constructors Leader (after Race)' ordinal='19' />
+            <column datatype='real' name='avg. Pitstop Duration (in s)' ordinal='20' />
+            <column datatype='real' name='Difference 1st to 2nd (in s)' ordinal='21' />
+            <column datatype='real' name='avg. Difference Top 5 (in s)' ordinal='22' />
+            <column datatype='real' name='Top Speed of the Race' ordinal='23' />
+            <column datatype='real' name='Overtakes' ordinal='24' />
+            <column datatype='real' name='Fastest Lap of the Race' ordinal='25' />
+            <column datatype='real' name='Driver Championship Point Difference' ordinal='26' />
+            <column datatype='real' name='Constructors Championship Point Difference' ordinal='27' />
+            <column datatype='real' name='Lap record to Date' ordinal='28' />
+            <column datatype='integer' name='Number of prev. F1 Races' ordinal='29' />
+            <column datatype='string' name='Championship Leader (before Race)' ordinal='30' />
+            <column datatype='string' name='Constructors Leader (before Race)' ordinal='31' />
+            <column datatype='real' name='Related to round D' ordinal='32' />
+            <column datatype='real' name='Related to round C' ordinal='33' />
+            <column datatype='real' name='Tension Score' ordinal='34' />
+            <column datatype='real' name='Overtakes (normalized)' ordinal='35' />
+            <column datatype='real' name='Distance Top 2 (normalized)' ordinal='36' />
+            <column datatype='real' name='Distance Top 5 (normalized)' ordinal='37' />
+            <column datatype='real' name='Top Speed (normalized)' ordinal='38' />
+            <column datatype='real' name='Relative Laptime (normalized)' ordinal='39' />
+            <column datatype='real' name='Pitstop Time (normalized)' ordinal='40' />
+            <column datatype='real' name='Tradition_normalized' ordinal='41' />
+            <column datatype='real' name='Tradition (normalized)' ordinal='42' />
+            <column datatype='real' name='Championship Importance (normalized)' ordinal='43' />
+            <column datatype='real' name='Overall Score (0 to 100)' ordinal='44' />
+            <column datatype='string' name='Grand Prix' ordinal='45' />
+            <column datatype='integer' name='Rank' ordinal='46' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0xk9skl0okehzk1c4o8wx1kb553m' name='data_ananlysis.csv' table='[data_ananlysis#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='raceId' ordinal='1' />
+            <column datatype='integer' name='year' ordinal='2' />
+            <column datatype='integer' name='round' ordinal='3' />
+            <column datatype='integer' name='circuitId' ordinal='4' />
+            <column datatype='string' name='name' ordinal='5' />
+            <column datatype='date' name='date' ordinal='6' />
+            <column datatype='string' name='url' ordinal='7' />
+            <column datatype='string' name='Circuit Name' ordinal='8' />
+            <column datatype='string' name='City' ordinal='9' />
+            <column datatype='string' name='1st Driver Name' ordinal='10' />
+            <column datatype='string' name='1st Team Name' ordinal='11' />
+            <column datatype='string' name='2nd Driver Name' ordinal='12' />
+            <column datatype='string' name='2nd Team Name' ordinal='13' />
+            <column datatype='string' name='3rd Driver Name' ordinal='14' />
+            <column datatype='string' name='3rd Team Name' ordinal='15' />
+            <column datatype='string' name='Constructors Winner' ordinal='16' />
+            <column datatype='string' name='Pole Sitter' ordinal='17' />
+            <column datatype='string' name='Championship Leader (after Race)' ordinal='18' />
+            <column datatype='string' name='Constructors Leader (after Race)' ordinal='19' />
+            <column datatype='real' name='avg. Pitstop Duration (in s)' ordinal='20' />
+            <column datatype='real' name='Difference 1st to 2nd (in s)' ordinal='21' />
+            <column datatype='real' name='avg. Difference Top 5 (in s)' ordinal='22' />
+            <column datatype='real' name='Top Speed of the Race' ordinal='23' />
+            <column datatype='real' name='Overtakes' ordinal='24' />
+            <column datatype='real' name='Fastest Lap of the Race' ordinal='25' />
+            <column datatype='real' name='Driver Championship Point Difference' ordinal='26' />
+            <column datatype='real' name='Constructors Championship Point Difference' ordinal='27' />
+            <column datatype='real' name='Lap record to Date' ordinal='28' />
+            <column datatype='integer' name='Number of prev. F1 Races' ordinal='29' />
+            <column datatype='string' name='Championship Leader (before Race)' ordinal='30' />
+            <column datatype='string' name='Constructors Leader (before Race)' ordinal='31' />
+            <column datatype='real' name='Related to round D' ordinal='32' />
+            <column datatype='real' name='Related to round C' ordinal='33' />
+            <column datatype='real' name='Tension Score' ordinal='34' />
+            <column datatype='real' name='Overtakes (normalized)' ordinal='35' />
+            <column datatype='real' name='Distance Top 2 (normalized)' ordinal='36' />
+            <column datatype='real' name='Distance Top 5 (normalized)' ordinal='37' />
+            <column datatype='real' name='Top Speed (normalized)' ordinal='38' />
+            <column datatype='real' name='Relative Laptime (normalized)' ordinal='39' />
+            <column datatype='real' name='Pitstop Time (normalized)' ordinal='40' />
+            <column datatype='real' name='Tradition_normalized' ordinal='41' />
+            <column datatype='real' name='Tradition (normalized)' ordinal='42' />
+            <column datatype='real' name='Championship Importance (normalized)' ordinal='43' />
+            <column datatype='real' name='Overall Score (0 to 100)' ordinal='44' />
+            <column datatype='string' name='Grand Prix' ordinal='45' />
+            <column datatype='integer' name='Rank' ordinal='46' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>raceId</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[raceId]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>raceId</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>round</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[round]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>round</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>circuitId</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[circuitId]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>circuitId</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[url]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>url</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Circuit Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Circuit Name]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Circuit Name</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>1st Driver Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[1st Driver Name]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>1st Driver Name</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>1st Team Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[1st Team Name]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>1st Team Name</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2nd Driver Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[2nd Driver Name]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>2nd Driver Name</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2nd Team Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[2nd Team Name]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>2nd Team Name</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>3rd Driver Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[3rd Driver Name]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>3rd Driver Name</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>3rd Team Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[3rd Team Name]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>3rd Team Name</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Constructors Winner</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Constructors Winner]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Constructors Winner</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pole Sitter</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pole Sitter]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Pole Sitter</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Championship Leader (after Race)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Championship Leader (after Race)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Championship Leader (after Race)</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Constructors Leader (after Race)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Constructors Leader (after Race)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Constructors Leader (after Race)</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg. Pitstop Duration (in s)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg. Pitstop Duration (in s)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>avg. Pitstop Duration (in s)</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Difference 1st to 2nd (in s)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Difference 1st to 2nd (in s)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Difference 1st to 2nd (in s)</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg. Difference Top 5 (in s)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg. Difference Top 5 (in s)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>avg. Difference Top 5 (in s)</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Top Speed of the Race</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Top Speed of the Race]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Top Speed of the Race</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Overtakes</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Overtakes]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Overtakes</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fastest Lap of the Race</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Fastest Lap of the Race]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Fastest Lap of the Race</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Driver Championship Point Difference</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Driver Championship Point Difference]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Driver Championship Point Difference</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Constructors Championship Point Difference</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Constructors Championship Point Difference]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Constructors Championship Point Difference</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lap record to Date</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Lap record to Date]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Lap record to Date</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of prev. F1 Races</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of prev. F1 Races]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Number of prev. F1 Races</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Championship Leader (before Race)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Championship Leader (before Race)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Championship Leader (before Race)</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Constructors Leader (before Race)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Constructors Leader (before Race)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Constructors Leader (before Race)</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Related to round D</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Related to round D]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Related to round D</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Related to round C</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Related to round C]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Related to round C</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tension Score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Tension Score]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Tension Score</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Overtakes (normalized)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Overtakes (normalized)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Overtakes (normalized)</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Distance Top 2 (normalized)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Distance Top 2 (normalized)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Distance Top 2 (normalized)</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Distance Top 5 (normalized)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Distance Top 5 (normalized)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Distance Top 5 (normalized)</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Top Speed (normalized)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Top Speed (normalized)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Top Speed (normalized)</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Relative Laptime (normalized)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Relative Laptime (normalized)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Relative Laptime (normalized)</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pitstop Time (normalized)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pitstop Time (normalized)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Pitstop Time (normalized)</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tradition_normalized</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Tradition_normalized]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Tradition_normalized</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tradition (normalized)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Tradition (normalized)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Tradition (normalized)</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Championship Importance (normalized)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Championship Importance (normalized)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Championship Importance (normalized)</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Overall Score (0 to 100)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Overall Score (0 to 100)]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Overall Score (0 to 100)</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Grand Prix</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Grand Prix]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Grand Prix</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Rank]</local-name>
+            <parent-name>[data_ananlysis.csv]</parent-name>
+            <remote-alias>Rank</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Championship Importance' datatype='real' name='[Calculation_5707538508121497604]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] * [Championship Importance (normalized)]' />
+      </column>
+      <column caption='Top Speed' datatype='real' name='[Calculation_5707538508131532807]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2] * [Top Speed (normalized)]' />
+      </column>
+      <column datatype='real' name='[Championship Importance (normalized)]' role='measure' type='quantitative' />
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='real' name='[Constructors Championship Point Difference]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Difference 1st to 2nd (in s)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Distance Top 2 (normalized)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Distance Top 5 (normalized)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Driver Championship Point Difference]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[F1]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Fastest Lap of the Race]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Lap record to Date]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of prev. F1 Races]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Overall Score (0 to 100)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Overtakes (normalized)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Overtakes]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Pitstop Time (normalized)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Related to round C]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Related to round D]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Relative Laptime (normalized)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Tension Score]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Top Speed (normalized)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Top Speed of the Race]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Tradition (normalized)]' role='measure' type='quantitative' />
+      <column caption='Tradition normalized' datatype='real' name='[Tradition_normalized]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='data_ananlysis.csv' datatype='table' name='[__tableau_internal_object_id__].[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]' role='measure' type='quantitative' />
+      <column datatype='real' name='[avg. Difference Top 5 (in s)]' role='measure' type='quantitative' />
+      <column datatype='real' name='[avg. Pitstop Duration (in s)]' role='measure' type='quantitative' />
+      <column caption='Circuit Id' datatype='integer' name='[circuitId]' role='dimension' type='ordinal' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Race Id' datatype='integer' name='[raceId]' role='dimension' type='ordinal' />
+      <column caption='Round' datatype='integer' name='[round]' role='measure' type='quantitative' />
+      <column caption='Url' datatype='string' name='[url]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_5707538508121497604]' derivation='Attribute' name='[attr:Calculation_5707538508121497604:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Championship Importance (normalized)]' derivation='Attribute' name='[attr:Championship Importance (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_5707538508121497604]' derivation='Sum' name='[sum:Calculation_5707538508121497604:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Championship Importance (normalized)]' derivation='Sum' name='[sum:Championship Importance (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Constructors Championship Point Difference]' derivation='Sum' name='[sum:Constructors Championship Point Difference:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Difference 1st to 2nd (in s)]' derivation='Sum' name='[sum:Difference 1st to 2nd (in s):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Distance Top 2 (normalized)]' derivation='Sum' name='[sum:Distance Top 2 (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Distance Top 5 (normalized)]' derivation='Sum' name='[sum:Distance Top 5 (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Driver Championship Point Difference]' derivation='Sum' name='[sum:Driver Championship Point Difference:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[F1]' derivation='Sum' name='[sum:F1:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Fastest Lap of the Race]' derivation='Sum' name='[sum:Fastest Lap of the Race:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Lap record to Date]' derivation='Sum' name='[sum:Lap record to Date:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Number of prev. F1 Races]' derivation='Sum' name='[sum:Number of prev. F1 Races:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Overall Score (0 to 100)]' derivation='Sum' name='[sum:Overall Score (0 to 100):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Overtakes (normalized)]' derivation='Sum' name='[sum:Overtakes (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Overtakes]' derivation='Sum' name='[sum:Overtakes:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Pitstop Time (normalized)]' derivation='Sum' name='[sum:Pitstop Time (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Related to round C]' derivation='Sum' name='[sum:Related to round C:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Related to round D]' derivation='Sum' name='[sum:Related to round D:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Relative Laptime (normalized)]' derivation='Sum' name='[sum:Relative Laptime (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Tension Score]' derivation='Sum' name='[sum:Tension Score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Top Speed (normalized)]' derivation='Sum' name='[sum:Top Speed (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Top Speed of the Race]' derivation='Sum' name='[sum:Top Speed of the Race:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Tradition (normalized)]' derivation='Sum' name='[sum:Tradition (normalized):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Tradition_normalized]' derivation='Sum' name='[sum:Tradition_normalized:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[avg. Difference Top 5 (in s)]' derivation='Sum' name='[sum:avg. Difference Top 5 (in s):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[avg. Pitstop Duration (in s)]' derivation='Sum' name='[sum:avg. Pitstop Duration (in s):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[round]' derivation='Sum' name='[sum:round:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.755357' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.244643' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:F1:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Calculation_5707538508121497604:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Calculation_5707538508121497604:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:avg. Pitstop Duration (in s):qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Pitstop Time (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Overtakes (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Number of prev. F1 Races:qk]&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Fastest Lap of the Race:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[__tableau_internal_object_id__].[cnt:data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525:qk]&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[usr:Calculation_5707538507877605379:qk]&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;[Parameters].[Parameter 1]&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:round:qk]&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Championship Importance (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Championship Importance (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Top Speed of the Race:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Related to round D:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Top Speed (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Difference 1st to 2nd (in s):qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Calculation_5707538508123107333:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Calculation_5707538508123107333:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Overall Score (0 to 100):qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Overtakes:qk]&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Tension Score:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Distance Top 5 (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Relative Laptime (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Driver Championship Point Difference:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Distance Top 2 (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Tradition (normalized):qk]&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Related to round C:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Lap record to Date:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Tradition_normalized:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:avg. Difference Top 5 (in s):qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Constructors Championship Point Difference:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Championship Importance Factor' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+          <calculation class='tableau' formula='4' />
+          <range granularity='1' max='10' min='0' />
+        </column>
+        <column caption='Top Speed Factor' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='7'>
+          <calculation class='tableau' formula='7' />
+          <range max='10' min='0' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='data_ananlysis.csv' id='data_ananlysis.csv_1E3080FAAA5E411A88704AAAAE995525'>
+            <properties context=''>
+              <relation connection='textscan.0xk9skl0okehzk1c4o8wx1kb553m' name='data_ananlysis.csv' table='[data_ananlysis#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='integer' name='raceId' ordinal='1' />
+                  <column datatype='integer' name='year' ordinal='2' />
+                  <column datatype='integer' name='round' ordinal='3' />
+                  <column datatype='integer' name='circuitId' ordinal='4' />
+                  <column datatype='string' name='name' ordinal='5' />
+                  <column datatype='date' name='date' ordinal='6' />
+                  <column datatype='string' name='url' ordinal='7' />
+                  <column datatype='string' name='Circuit Name' ordinal='8' />
+                  <column datatype='string' name='City' ordinal='9' />
+                  <column datatype='string' name='1st Driver Name' ordinal='10' />
+                  <column datatype='string' name='1st Team Name' ordinal='11' />
+                  <column datatype='string' name='2nd Driver Name' ordinal='12' />
+                  <column datatype='string' name='2nd Team Name' ordinal='13' />
+                  <column datatype='string' name='3rd Driver Name' ordinal='14' />
+                  <column datatype='string' name='3rd Team Name' ordinal='15' />
+                  <column datatype='string' name='Constructors Winner' ordinal='16' />
+                  <column datatype='string' name='Pole Sitter' ordinal='17' />
+                  <column datatype='string' name='Championship Leader (after Race)' ordinal='18' />
+                  <column datatype='string' name='Constructors Leader (after Race)' ordinal='19' />
+                  <column datatype='real' name='avg. Pitstop Duration (in s)' ordinal='20' />
+                  <column datatype='real' name='Difference 1st to 2nd (in s)' ordinal='21' />
+                  <column datatype='real' name='avg. Difference Top 5 (in s)' ordinal='22' />
+                  <column datatype='real' name='Top Speed of the Race' ordinal='23' />
+                  <column datatype='real' name='Overtakes' ordinal='24' />
+                  <column datatype='real' name='Fastest Lap of the Race' ordinal='25' />
+                  <column datatype='real' name='Driver Championship Point Difference' ordinal='26' />
+                  <column datatype='real' name='Constructors Championship Point Difference' ordinal='27' />
+                  <column datatype='real' name='Lap record to Date' ordinal='28' />
+                  <column datatype='integer' name='Number of prev. F1 Races' ordinal='29' />
+                  <column datatype='string' name='Championship Leader (before Race)' ordinal='30' />
+                  <column datatype='string' name='Constructors Leader (before Race)' ordinal='31' />
+                  <column datatype='real' name='Related to round D' ordinal='32' />
+                  <column datatype='real' name='Related to round C' ordinal='33' />
+                  <column datatype='real' name='Tension Score' ordinal='34' />
+                  <column datatype='real' name='Overtakes (normalized)' ordinal='35' />
+                  <column datatype='real' name='Distance Top 2 (normalized)' ordinal='36' />
+                  <column datatype='real' name='Distance Top 5 (normalized)' ordinal='37' />
+                  <column datatype='real' name='Top Speed (normalized)' ordinal='38' />
+                  <column datatype='real' name='Relative Laptime (normalized)' ordinal='39' />
+                  <column datatype='real' name='Pitstop Time (normalized)' ordinal='40' />
+                  <column datatype='real' name='Tradition_normalized' ordinal='41' />
+                  <column datatype='real' name='Tradition (normalized)' ordinal='42' />
+                  <column datatype='real' name='Championship Importance (normalized)' ordinal='43' />
+                  <column datatype='real' name='Overall Score (0 to 100)' ordinal='44' />
+                  <column datatype='string' name='Grand Prix' ordinal='45' />
+                  <column datatype='integer' name='Rank' ordinal='46' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run><![CDATA[<Excitment Scores for Grand Prixs >]]></run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='races' name='federated.0uc241a0rbpcp5158x83x09e97h7' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Championship Importance Factor' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+              <range granularity='1' max='10' min='0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0uc241a0rbpcp5158x83x09e97h7'>
+            <column caption='Championship Importance' datatype='real' name='[Calculation_5707538508121497604]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1] * [Championship Importance (normalized)]' />
+            </column>
+            <column datatype='real' name='[Championship Importance (normalized)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Distance Top 2 (normalized)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Distance Top 5 (normalized)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Grand Prix]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Overtakes (normalized)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Pitstop Time (normalized)]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Rank]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Relative Laptime (normalized)]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Top Speed (normalized)]' role='measure' type='quantitative' />
+            <column-instance column='[Grand Prix]' derivation='None' name='[none:Grand Prix:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_5707538508121497604]' derivation='Sum' name='[sum:Calculation_5707538508121497604:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Distance Top 2 (normalized)]' derivation='Sum' name='[sum:Distance Top 2 (normalized):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Distance Top 5 (normalized)]' derivation='Sum' name='[sum:Distance Top 5 (normalized):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Overtakes (normalized)]' derivation='Sum' name='[sum:Overtakes (normalized):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pitstop Time (normalized)]' derivation='Sum' name='[sum:Pitstop Time (normalized):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Relative Laptime (normalized)]' derivation='Sum' name='[sum:Relative Laptime (normalized):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Top Speed (normalized)]' derivation='Sum' name='[sum:Top Speed (normalized):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Distance Top 2 (normalized):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Distance Top 5 (normalized):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Overtakes (normalized):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Pitstop Time (normalized):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Relative Laptime (normalized):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Top Speed (normalized):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Calculation_5707538508121497604:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Distance Top 2 (normalized):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Distance Top 5 (normalized):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Overtakes (normalized):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Pitstop Time (normalized):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Relative Laptime (normalized):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Top Speed (normalized):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[sum:Calculation_5707538508121497604:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0uc241a0rbpcp5158x83x09e97h7].[none:Grand Prix:nk]'>
+            <groupfilter count='10' end='bottom' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Rank])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Grand Prix:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0uc241a0rbpcp5158x83x09e97h7].[none:Grand Prix:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Sakhir Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Eifel Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Korean Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Azerbaijan Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Turkish Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Korean Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Mexican Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Mexican Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Emilia Romagna Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Azerbaijan Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Mexican Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Indian Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Tuscan Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Korean Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;70th Anniversary Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Azerbaijan Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Mexican Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Styrian Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Mexican Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Indian Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Russian Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;San Marino Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Portuguese Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Turkish Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Russian Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Turkish Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Turkish Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Turkish Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Turkish Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2012&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Russian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Russian Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Indian Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Turkish Grand Prix 2020&quot;</bucket>
+              <bucket>&quot;Russian Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2017&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;San Marino Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2019&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Turkish Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;San Marino Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2018&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2015&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;San Marino Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;San Marino Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2007&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2011&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Abu Dhabi Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Russian Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2014&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2008&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Singapore Grand Prix 2013&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2006&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Korean Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2004&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Chinese Grand Prix 2009&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Russian Grand Prix 2016&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Bahrain Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2010&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;British Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2005&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;Austrian Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Brazilian Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Belgian Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;European Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2003&quot;</bucket>
+              <bucket>&quot;Italian Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Malaysian Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Australian Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;San Marino Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;United States Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;French Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Hungarian Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Japanese Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;Canadian Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Monaco Grand Prix 2000&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;San Marino Grand Prix 2002&quot;</bucket>
+              <bucket>&quot;German Grand Prix 2001&quot;</bucket>
+              <bucket>&quot;Spanish Grand Prix 2002&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0uc241a0rbpcp5158x83x09e97h7].[none:Grand Prix:nk]</column>
+            <column>[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#d3b348' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uc241a0rbpcp5158x83x09e97h7].[Multiple Values]</rows>
+        <cols>[federated.0uc241a0rbpcp5158x83x09e97h7].[none:Grand Prix:nk]</cols>
+      </table>
+      <simple-id uuid='{F7802C89-93D9-4550-A732-6F6526D1AE11}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='races' name='federated.0uc241a0rbpcp5158x83x09e97h7' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Championship Importance Factor' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+              <range granularity='1' max='10' min='0' />
+            </column>
+            <column caption='Top Speed Factor' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='7'>
+              <calculation class='tableau' formula='7' />
+              <range max='10' min='0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0uc241a0rbpcp5158x83x09e97h7'>
+            <column caption='Championship Importance' datatype='real' name='[Calculation_5707538508121497604]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1] * [Championship Importance (normalized)]' />
+            </column>
+            <column caption='Top Speed' datatype='real' name='[Calculation_5707538508131532807]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2] * [Top Speed (normalized)]' />
+            </column>
+            <column datatype='real' name='[Championship Importance (normalized)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Grand Prix]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Top Speed (normalized)]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_5707538508121497604]' derivation='Attribute' name='[attr:Calculation_5707538508121497604:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_5707538508131532807]' derivation='Attribute' name='[attr:Calculation_5707538508131532807:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Championship Importance (normalized)]' derivation='Attribute' name='[attr:Championship Importance (normalized):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Grand Prix]' derivation='None' name='[none:Grand Prix:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Calculation_5707538508121497604:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Calculation_5707538508131532807:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Championship Importance (normalized):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Calculation_5707538508123107333:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Calculation_5707538508121497604:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]' value='99' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0uc241a0rbpcp5158x83x09e97h7].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uc241a0rbpcp5158x83x09e97h7].[none:Grand Prix:nk]</rows>
+        <cols>[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{11EA687D-366B-48BD-ABF0-AAE658F52E3B}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones />
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{BE80ABC4-8C60-4CCA-B0A9-B23E2D0290B4}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='144'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='300'>
+            <card param='[federated.0uc241a0rbpcp5158x83x09e97h7].[attr:Calculation_5707538508123107333:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='1' param='[federated.0uc241a0rbpcp5158x83x09e97h7].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{471E14D7-FF2D-47A5-ACC5-C47DBE068616}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{3D78E073-42B5-4830-9AD5-02EBCF890242}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card hide-buttons='true' mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2479A212-C640-45BF-948B-77CAB05DF1E1}' />
+    </window>
+  </windows>
+</workbook>
